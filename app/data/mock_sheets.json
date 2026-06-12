@@ -1,0 +1,38 @@
+{
+  "Contacts": [
+    {
+      "Phone": "415-555-0100",
+      "Name": "Jessica Taylor",
+      "Email": "jessica@example.com",
+      "Notes": "Prefers Emma's morning Reformer classes.",
+      "Created At": "2026-05-15T09:30:00Z"
+    },
+    {
+      "Phone": "415-555-0122",
+      "Name": "David Smith",
+      "Email": "david.smith@example.com",
+      "Notes": "Has lower back concerns, avoid heavy twisting.",
+      "Created At": "2026-05-20T14:15:00Z"
+    }
+  ],
+  "Call Logs": [
+    {
+      "Call ID": "call_001",
+      "Phone": "415-555-0100",
+      "Name": "Jessica Taylor",
+      "Summary": "Inquired about class packs and booking policies. Booked mat pilates.",
+      "Handoff Required": false,
+      "Handoff Reason": "",
+      "Created At": "2026-05-25T10:05:00Z"
+    },
+    {
+      "Call ID": "call_002",
+      "Phone": "415-555-0155",
+      "Name": "Unknown Caller",
+      "Summary": "Complained about being double-charged for the 10-class pack on their credit card.",
+      "Handoff Required": true,
+      "Handoff Reason": "Billing charge dispute / double charge complaint",
+      "Created At": "2026-05-25T11:42:00Z"
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura — Solstice Pilates AI Receptionist</title>
+    
+    <!-- Modern Typography & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- HEADER -->
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="logo-icon"><i class="fa-solid fa-spa"></i></div>
+                <div class="logo-text">
+                    <h1>Solstice Pilates</h1>
+                    <p>Reception Portal</p>
+                </div>
+            </div>
+            
+            <!-- Connection Drawer Badge System -->
+            <div class="system-status-bar">
+                <div class="status-badge" id="llm-badge">
+                    <i class="fa-solid fa-brain"></i>
+                    <span id="llm-text">LLM: Loading...</span>
+                </div>
+                <div class="status-badge" id="calendar-badge">
+                    <i class="fa-regular fa-calendar-days"></i>
+                    <span id="calendar-text">Calendar: Loading...</span>
+                </div>
+                <div class="status-badge" id="sheets-badge">
+                    <i class="fa-solid fa-table-cells"></i>
+                    <span id="sheets-text">Sheets: Loading...</span>
+                </div>
+                <button class="theme-toggle-btn" id="theme-toggle" title="Toggle Dark/Light Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- MAIN LAYOUT -->
+        <main class="main-layout">
+            <!-- LEFT COLUMN: CHAT INTERFACE -->
+            <section class="chat-section glass-panel">
+                <!-- Phone / Session Setup -->
+                <div class="session-setup">
+                    <div class="setup-header">
+                        <h3><i class="fa-solid fa-phone-volume"></i> Caller Simulation Panel</h3>
+                    </div>
+                    <div class="setup-inputs">
+                        <div class="input-group">
+                            <label for="caller-phone">Simulated Caller Phone:</label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-hashtag"></i>
+                                <input type="text" id="caller-phone" value="415-555-0190" placeholder="e.g. 415-555-0190">
+                            </div>
+                        </div>
+                        <div class="quick-pickers">
+                            <span>Pre-seed callers:</span>
+                            <button class="picker-tag active" data-phone="415-555-0190" data-name="Sara">Sara (New Caller)</button>
+                            <button class="picker-tag" data-phone="415-555-0100" data-name="Jessica Taylor">Jessica (Existing Contact)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat Messages Stream -->
+                <div class="chat-messages-container" id="chat-box">
+                    <div class="system-bubble">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <p><strong>System Aura Initialized:</strong> You are simulating a phone call. The AI receptionist "Aura" knows your phone number and will check your contacts or calendar automatically when asked.</p>
+                    </div>
+                    
+                    <div class="message assistant">
+                        <div class="message-avatar"><i class="fa-solid fa-headset"></i></div>
+                        <div class="message-content">
+                            <p>Thank you for calling Solstice Pilates! My name is Aura. How can I help you today?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Agent Status Indicators -->
+                <div class="agent-activity-bar" id="activity-bar" style="display: none;">
+                    <span class="activity-text"><i class="fa-solid fa-circle-notch fa-spin"></i> <span id="activity-status">Agent thinking...</span></span>
+                </div>
+
+                <!-- Immediate Human Handoff Notification -->
+                <div class="handoff-alert-banner" id="handoff-banner" style="display: none;">
+                    <div class="alert-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <div class="alert-details">
+                        <h4>IMMEDIATE HUMAN HANDOFF TRIGGERED</h4>
+                        <p id="handoff-reason">A manager has been notified to review this billing dispute.</p>
+                    </div>
+                </div>
+
+                <!-- Chat Input Panel -->
+                <form class="chat-input-form" id="chat-form">
+                    <input type="text" id="chat-input" placeholder="Type what caller says... (e.g. Is the 6pm class on Thursday open?)" autocomplete="off">
+                    <button type="submit" class="send-btn" id="send-button" title="Send Message">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </form>
+            </section>
+
+            <!-- RIGHT COLUMN: LIVE DATA VISUALIZER -->
+            <section class="visualizer-section glass-panel">
+                <div class="visualizer-header">
+                    <h2><i class="fa-solid fa-chart-network"></i> Live Studio DB Visualizer</h2>
+                    <p>Updates instantly as the AI receptionist calls tools in the background.</p>
+                </div>
+
+                <!-- Tab Headers -->
+                <div class="tab-headers">
+                    <button class="tab-btn active" data-tab="calendar-tab">
+                        <i class="fa-regular fa-calendar"></i> Thursday Classes
+                    </button>
+                    <button class="tab-btn" data-tab="contacts-tab">
+                        <i class="fa-solid fa-address-book"></i> Sheet Contacts
+                    </button>
+                    <button class="tab-btn" data-tab="logs-tab">
+                        <i class="fa-solid fa-clock-rotate-left"></i> Sheet Call Logs
+                    </button>
+                </div>
+
+                <!-- Tab Content Bodies -->
+                <div class="tab-contents">
+                    <!-- Tab 1: Calendar Classes -->
+                    <div class="tab-pane active" id="calendar-tab">
+                        <div class="pane-options">
+                            <label for="calendar-date-picker">Target Booking Date:</label>
+                            <input type="date" id="calendar-date-picker" value="2026-05-28">
+                        </div>
+                        <div class="classes-grid" id="calendar-visual-list">
+                            <!-- Populated dynamically by JS -->
+                            <div class="loading-state"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading calendar...</div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Sheets Contacts -->
+                    <div class="tab-pane" id="contacts-tab">
+                        <div class="table-container">
+                            <table class="visualizer-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Phone</th>
+                                        <th>Email</th>
+                                        <th>Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="contacts-visual-list">
+                                    <!-- Populated dynamically by JS -->
+                                    <tr><td colspan="4" class="loading-td"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading contacts...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Sheets Call Logs -->
+                    <div class="tab-pane" id="logs-tab">
+                        <div class="call-logs-container" id="logs-visual-list">
+                            <!-- Populated dynamically by JS -->
+                            <div class="loading-state"><i class="fa-solid fa-circle-notch fa-spin"></i> Loading call logs...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reset Database Action Drawer -->
+                <div class="visualizer-footer">
+                    <button class="reset-db-btn" id="reset-db-btn">
+                        <i class="fa-solid fa-trash-can-undo"></i> Reset Mock Databases
+                    </button>
+                    <span class="db-hint">Use this to restart test scenarios</span>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- JS Client logic -->
+    <script src="/static/app.js"></script>
+</body>
+</html>

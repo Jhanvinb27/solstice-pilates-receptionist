@@ -1,0 +1,183 @@
+{
+  "classes": [
+    {
+      "id": "mat_weekday_8am_2026-05-28",
+      "name": "Intro Mat Pilates",
+      "instructor": "Lucas",
+      "date": "2026-05-28",
+      "time": "8:00 AM",
+      "capacity": 12,
+      "booked_count": 3,
+      "attendees": [
+        {
+          "name": "Ava White",
+          "phone": "415-555-3001"
+        },
+        {
+          "name": "Ethan Harris",
+          "phone": "415-555-3002"
+        },
+        {
+          "name": "Chloe Martin",
+          "phone": "415-555-3003"
+        }
+      ]
+    },
+    {
+      "id": "reformer_weekday_9am_2026-05-28",
+      "name": "Advanced Reformer",
+      "instructor": "Sophia",
+      "date": "2026-05-28",
+      "time": "9:00 AM",
+      "capacity": 10,
+      "booked_count": 6,
+      "attendees": [
+        {
+          "name": "Attendee 1",
+          "phone": "415-555-6001"
+        },
+        {
+          "name": "Attendee 2",
+          "phone": "415-555-6002"
+        },
+        {
+          "name": "Attendee 3",
+          "phone": "415-555-6003"
+        },
+        {
+          "name": "Attendee 4",
+          "phone": "415-555-6004"
+        },
+        {
+          "name": "Attendee 5",
+          "phone": "415-555-6005"
+        },
+        {
+          "name": "Attendee 6",
+          "phone": "415-555-6006"
+        }
+      ]
+    },
+    {
+      "id": "reformer_weekday_12pm_2026-05-28",
+      "name": "Lunch Express Reformer",
+      "instructor": "Sophia",
+      "date": "2026-05-28",
+      "time": "12:00 PM",
+      "capacity": 10,
+      "booked_count": 4,
+      "attendees": [
+        {
+          "name": "Attendee 1",
+          "phone": "415-555-6001"
+        },
+        {
+          "name": "Attendee 2",
+          "phone": "415-555-6002"
+        },
+        {
+          "name": "Attendee 3",
+          "phone": "415-555-6003"
+        },
+        {
+          "name": "Attendee 4",
+          "phone": "415-555-6004"
+        }
+      ]
+    },
+    {
+      "id": "reformer_weekday_6pm_2026-05-28",
+      "name": "Reformer Pilates",
+      "instructor": "Emma",
+      "date": "2026-05-28",
+      "time": "6:00 PM",
+      "capacity": 10,
+      "booked_count": 10,
+      "attendees": [
+        {
+          "name": "Michael Chen",
+          "phone": "415-555-1001"
+        },
+        {
+          "name": "Sophia Rodriguez",
+          "phone": "415-555-1002"
+        },
+        {
+          "name": "Liam Johnston",
+          "phone": "415-555-1003"
+        },
+        {
+          "name": "Isabella Smith",
+          "phone": "415-555-1004"
+        },
+        {
+          "name": "James Lee",
+          "phone": "415-555-1005"
+        },
+        {
+          "name": "Olivia Martinez",
+          "phone": "415-555-1006"
+        },
+        {
+          "name": "Benjamin Wright",
+          "phone": "415-555-1007"
+        },
+        {
+          "name": "Mia Thompson",
+          "phone": "415-555-1008"
+        },
+        {
+          "name": "Lucas Davis",
+          "phone": "415-555-1009"
+        },
+        {
+          "name": "Charlotte Garcia",
+          "phone": "415-555-1010"
+        }
+      ]
+    },
+    {
+      "id": "reformer_weekday_7pm_2026-05-28",
+      "name": "Reformer Pilates",
+      "instructor": "Emma",
+      "date": "2026-05-28",
+      "time": "7:00 PM",
+      "capacity": 10,
+      "booked_count": 8,
+      "attendees": [
+        {
+          "name": "John Doe",
+          "phone": "415-555-2001"
+        },
+        {
+          "name": "Jane Miller",
+          "phone": "415-555-2002"
+        },
+        {
+          "name": "Robert Taylor",
+          "phone": "415-555-2003"
+        },
+        {
+          "name": "Emily Brown",
+          "phone": "415-555-2004"
+        },
+        {
+          "name": "William Wilson",
+          "phone": "415-555-2005"
+        },
+        {
+          "name": "Elizabeth Anderson",
+          "phone": "415-555-2006"
+        },
+        {
+          "name": "David Thomas",
+          "phone": "415-555-2007"
+        },
+        {
+          "name": "Barbara Jackson",
+          "phone": "415-555-2008"
+        }
+      ]
+    }
+  ]
+}
